@@ -111,7 +111,7 @@ class Bot(Client):  # pylint: disable=too-many-ancestors
         try:
             while True:
                 logger.info("starting to check uptime..")
-                edit_text = "✨ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀᴄᴇ ɴᴇᴛᴡᴏʀᴋ ʙᴏᴛ's sᴛᴀᴛᴜs ᴄʜᴀɴɴᴇʟ\n\n❄️ ʜᴇʀᴇ ɪs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ's ᴡʜɪᴄʜ ᴡᴇ ᴏᴡɴ ᴀɴᴅ ᴛʜᴇɪʀ sᴛᴀᴛᴜs (ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ), ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ᴋᴇᴇᴘ ᴜᴘᴅᴀᴛɪɴɢ ᴏɴ ᴇᴠᴇʀʏ 10-15 ᴍɪɴᴜᴛᴇs."
+                edit_text = "✨ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀᴄᴇ ɴᴇᴛᴡᴏʀᴋ ʙᴏᴛ's sᴛᴀᴛᴜs ᴄʜᴀɴɴᴇʟ\n\n❄️ ʜᴇʀᴇ ɪs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ's ᴡʜɪᴄʜ ᴡᴇ ᴏᴡɴ ᴀɴᴅ ᴛʜᴇɪʀ sᴛᴀᴛᴜs (ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ), ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ᴋᴇᴇᴘ ᴜᴘᴅᴀᴛɪɴɢ ᴏɴ ᴇᴠᴇʀʏ 10-15 ᴍɪɴᴜᴛᴇs.\n\n"
                 for bot in BOTS:
                     logger.info("checking @%s", bot)
                     try:
@@ -128,9 +128,10 @@ class Bot(Client):  # pylint: disable=too-many-ancestors
                         edit_text += f"╭⎋ __Bot Name:__ @{bot}\n╰⊚ __Bot Status:__ ᴀʟɪᴠᴇ ✨\n\n"
 
                 time_now = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
-                formatted_time = time_now.strftime("%d %B %Y %I:%M %p")
+                formatted_date = time_now.strftime("%d %B %Y")
+                formatted_time = time_now.strftime("%I:%M %p")
 
-                edit_text += f"ʟᴀsᴛ ᴄʜᴇᴄᴋᴇᴅ ᴏɴ :\nᴅᴀᴛᴇ : {formatted_time}\nᴛɪᴍᴇ : (**IST**)"
+                edit_text += f"ʟᴀsᴛ ᴄʜᴇᴄᴋᴇᴅ ᴏɴ :\nᴅᴀᴛᴇ : {formatted_date}\nᴛɪᴍᴇ : {formatted_time}(**IST**)"
 
                 for message_id in MESSAGE_IDS:
                     await self.edit_message_text(CHANNEL_ID, message_id, edit_text)
