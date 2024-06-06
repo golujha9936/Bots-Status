@@ -8,7 +8,7 @@
     "uptime",
     "monitoring"
   ],
-  "repository": "https://github.com/Ns-AnoNymouS/bot-status/tree/master",
+  "repository": "https://github.com/golujha9936/Bots-Status",
   "env": {
     "API_ID": {
       "description": "Your API ID from https://my.telegram.org",
