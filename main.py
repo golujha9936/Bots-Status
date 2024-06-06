@@ -111,7 +111,7 @@ class Bot(Client):  # pylint: disable=too-many-ancestors
         try:
             while True:
                 logger.info("starting to check uptime..")
-                edit_text = "**🤖 NS BOTS Status** (Updated every 1 hour)\n\n"
+                edit_text = "✨ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴀᴄᴇ ɴᴇᴛᴡᴏʀᴋ ʙᴏᴛ's sᴛᴀᴛᴜs ᴄʜᴀɴɴᴇʟ\n\n❄️ ʜᴇʀᴇ ɪs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ's ᴡʜɪᴄʜ ᴡᴇ ᴏᴡɴ ᴀɴᴅ ᴛʜᴇɪʀ sᴛᴀᴛᴜs (ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ), ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ᴋᴇᴇᴘ ᴜᴘᴅᴀᴛɪɴɢ ᴏɴ ᴇᴠᴇʀʏ 10-15 ᴍɪɴᴜᴛᴇs."
                 for bot in BOTS:
                     logger.info("checking @%s", bot)
                     try:
@@ -119,18 +119,18 @@ class Bot(Client):  # pylint: disable=too-many-ancestors
                     except ListenerTimeout:
                         logger.warning("@%s is down", bot)
                         edit_text += (
-                            f"__Bot Name:__ @{bot}\n__Bot Status:__ Down ❌\n\n"
+                            f"╭⎋ __Bot Name:__ @{bot}\n╰⊚ __Bot Status:__ sʟᴇᴇᴘɪɴɢ 💤\n\n"
                         )
                         if GET_NOFIFIED:
                             await self.send_message("me", f"@{bot} was down")
                     else:
                         logger.info("all good with @%s", bot)
-                        edit_text += f"__Bot Name:__ @{bot}\n__Bot Status:__ Up ✅\n\n"
+                        edit_text += f"╭⎋ __Bot Name:__ @{bot}\n╰⊚ __Bot Status:__ ᴀʟɪᴠᴇ ✨\n\n"
 
                 time_now = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
                 formatted_time = time_now.strftime("%d %B %Y %I:%M %p")
 
-                edit_text += f"__Last checked on {formatted_time} (**IST**)__"
+                edit_text += f"ʟᴀsᴛ ᴄʜᴇᴄᴋᴇᴅ ᴏɴ :\nᴅᴀᴛᴇ : {formatted_time}\nᴛɪᴍᴇ : (**IST**)"
 
                 for message_id in MESSAGE_IDS:
                     await self.edit_message_text(CHANNEL_ID, message_id, edit_text)
