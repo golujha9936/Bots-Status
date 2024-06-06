@@ -79,4 +79,4 @@ with app:
 That's it! Your bot should now be running and checking the status of the specified bots, with added buttons for better interaction.
 
 ## Heroku Deployment
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Ns-AnoNymouS/bot-status/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/golujha9936/Bots-Status)
